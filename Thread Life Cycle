@@ -130,3 +130,54 @@ OUTPUT:
 5
 ==========================================================
 ==========================================================
+
+public class MyThread extends Thread {
+
+	public static void main(String[] args) {
+		MyThread obj1 = new MyThread();		
+		obj1.start();	
+		obj1.interrupt();
+		obj1.display();		
+	}
+	
+	public void run()
+	{		
+		for (int no = 1; no<= 5; no++)
+		{
+			try 
+			{
+				Thread.sleep(3000);
+				System.out.println(no);
+			} 
+			catch (InterruptedException e) 
+			{
+				e.printStackTrace();
+			}			
+		}
+}
+	
+	public void display()
+	{
+		for (int no = 11; no<= 15; no++)
+		{			
+			System.out.println(no);
+		}
+	}
+}
+------------------------------------------------
+OUTPUT:
+11
+12
+13
+14
+15
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method)
+	at MyThread.run(MyThread.java:17)
+2
+3
+4
+5
+==========================================
+==========================================
+
