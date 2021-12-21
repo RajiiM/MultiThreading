@@ -187,3 +187,27 @@ Exception in thread "main" java.lang.IllegalArgumentException
 	at ThreadChild.main(ThreadChild.java:16)
 ==============================================================================
 ==============================================================================
+public class ThreadChild extends Thread{
+
+	public static void main(String[] args) {
+		System.out.println(Thread.currentThread().getId());
+		System.out.println(Thread.currentThread().getName());
+		System.out.println(Thread.currentThread().getPriority());
+		System.out.println(Thread.currentThread().getState());
+		
+		Thread.currentThread().setName("Rajii");
+		Thread.currentThread().setPriority(6);		
+		System.out.println(Thread.currentThread().getName());
+		System.out.println(Thread.currentThread().getPriority());
+	}	
+}
+-----------------------------------------------
+OUTPUT:
+1
+main
+5
+RUNNABLE
+Rajii
+6
+===================================================================================
+===================================================================================
