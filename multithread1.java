@@ -159,4 +159,31 @@ Rajalakshmi
 5
 ===================================================================
 ===================================================================
+public class ThreadChild extends Thread{
 
+	public static void main(String[] args) {
+		ThreadChild obj1 = new ThreadChild();
+
+		obj1.setPriority(MAX_PRIORITY);
+		System.out.println(obj1.getPriority());
+
+		obj1.setPriority(MIN_PRIORITY);
+		System.out.println(obj1.getPriority());	
+		
+		obj1.setPriority(4);
+		System.out.println(obj1.getPriority());	
+		
+		obj1.setPriority(40);
+		System.out.println(obj1.getPriority());	
+	}	
+}
+-----------------------------------------------------------------
+OUTPUT:
+10
+1
+4
+Exception in thread "main" java.lang.IllegalArgumentException
+	at java.base/java.lang.Thread.setPriority(Thread.java:1136)
+	at ThreadChild.main(ThreadChild.java:16)
+==============================================================================
+==============================================================================
