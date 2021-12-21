@@ -181,3 +181,51 @@ java.lang.InterruptedException: sleep interrupted
 ==========================================
 ==========================================
 
+public class MyThread extends Thread {
+
+	public static void main(String[] args) {
+		MyThread obj1 = new MyThread();		
+		obj1.start();	
+		obj1.interrupt();
+		obj1.display();		
+	}
+	
+	public void run()
+	{		
+		for (int no = 1; no<= 5; no++)
+		{
+			try 
+			{
+				Thread.sleep(3000);
+				System.out.println(no);
+			} 
+			catch (InterruptedException e) 
+			{
+				//e.printStackTrace();
+				System.out.println("Someone Interrupted me");
+			}			
+		}
+}
+	
+	public void display()
+	{
+		for (int no = 11; no<= 15; no++)
+		{			
+			System.out.println(no);
+		}
+	}
+}
+----------------------------------------------
+OUTPUT:
+11
+12
+13
+14
+15
+Someone Interrupted me
+2
+3
+4
+5
+===========================================
+===========================================
