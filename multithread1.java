@@ -120,3 +120,43 @@ Output:
 ============================================================
 ============================================================
 
+public class ThreadChild extends Thread{
+
+	public static void main(String[] args) {
+		ThreadChild obj1 = new ThreadChild();
+		System.out.println(obj1.getId());
+		System.out.println(obj1.getName());
+		System.out.println(obj1.getPriority()); //Default priority - 5
+		System.out.println(obj1.getState());
+		
+		obj1.setName("Rajii");
+		obj1.setPriority(3);
+		System.out.println(obj1.getName());
+		System.out.println(obj1.getPriority());
+		
+		obj1.setName("Rajalakshmi");
+		obj1.setPriority(1);
+		System.out.println(obj1.getName());
+		System.out.println(obj1.getPriority());
+		
+		System.out.println(Thread.MAX_PRIORITY);
+		System.out.println(Thread.MIN_PRIORITY);
+		System.out.println(Thread.NORM_PRIORITY);
+	}	
+}
+----------------------------------
+OUTPUT:
+10
+Thread-0
+5
+NEW
+Rajii
+3
+Rajalakshmi
+1
+10
+1
+5
+===================================================================
+===================================================================
+
